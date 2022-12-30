@@ -21,4 +21,4 @@ jobs:
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push image to Docker Hub
       run: |
-        docker push naufaalrmd/web-men:latest
+        docker push naufaalrmd8/web-men:latest
