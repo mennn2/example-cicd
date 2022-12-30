@@ -20,7 +20,7 @@ jobs:
         docker tag web-men:latest naufaalrmd8/web-men:latest
     - name: Log in to Docker Hub
       run: |
-        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push image to Docker Hub
       run: |
         docker push naufaalrmd8/web-men:latest
