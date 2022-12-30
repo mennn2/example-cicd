@@ -15,10 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag web-men:$(date +%s)
+      run: docker build . --file Dockerfile --tag web-men
     - name: Log in to Docker Hub
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push image to Docker Hub
       run: |
-        docker push web-men
+        docker push web-men:latest
